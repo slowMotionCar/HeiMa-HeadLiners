@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.heima.wemedia.mapper.WmMaterialMapper">
+    <update id="updateCollect" parameterType="Integer">
+        update wm_material set is_collection = 0 where id = #{id}
+    </update>
+    <select id="list" resultType="com.heima.model.wemedia.pojos.WmMaterial">
+        select * from wm_material where user_id = #{uid} order by is_collection desc
+    </select>
+</mapper>
